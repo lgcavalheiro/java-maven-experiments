@@ -1,0 +1,12 @@
+tasks:
+  - init: echo "Replace me with a build script for the project."
+    command: echo "Replace me with something that should run on every start, or just
+      remove me entirely."
+image:
+  file: .gitpod.Dockerfile
+
+vscode:
+  extensions:
+    - vscjava.vscode-java-pack@0.9.0:70x0ZBbqBMOBNXgG3kqVSw==
+    - vscjava.vscode-maven@0.21.4:Q+USgDv6z/kbIacpartlsg==
+    - adashen.vscode-tomcat@0.11.1:qq+mWSZCHkrza2mPgOhorg==
