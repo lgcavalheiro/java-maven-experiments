@@ -1,7 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page import="com.webapptest.MainHandler" %>
 <html>
+    <head>
+        <title> Pagina JSP Ola Mundo</title>
+    </head>
     <body>
-        <h2>Hello World!</h2>
-        <p>NAO CREIO QUE FUNFOU</p>
-        <img src="https://media.giphy.com/media/3o7bul4bNw60uhhQyI/giphy.gif" alt="kawaii">
+        <h1>
+            aaaaaaaaaaa
+        </h1>
     </body>
 </html>
