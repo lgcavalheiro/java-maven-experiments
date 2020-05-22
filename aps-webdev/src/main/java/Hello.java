@@ -3,12 +3,17 @@ import java.io.PrintWriter;
 import java.lang.Character;
 import java.lang.CharSequence;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,7 +24,7 @@ public class Hello extends HttpServlet {
     @Override
 	protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
 
     @Override
@@ -47,23 +52,18 @@ public class Hello extends HttpServlet {
                 lowerCaseFlag = true;
             } 
         }
-        specialFlag = senha.matches("[^A-Za-z0-9 ]");
+        Pattern p = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
+        Matcher m = p.matcher(senha);
+        specialFlag = m.find();
+        
+        Map<String, Boolean> flags = new HashMap<String, Boolean>();
+        flags.put("number", numberFlag);
+        flags.put("upper", capitalFlag);
+        flags.put("lower", lowerCaseFlag);
+        flags.put("special", specialFlag);
 
-        out.println("<html><body>");
-        out.println("SENHA FOI ESSA MERDA AQUI Ó: " + senha + "<br/>");
-        if(!numberFlag) {
-            out.println("SEM NUMERO PORRA <br/>");
-        }
-        if (!capitalFlag) {
-            out.println("SEM MAIUSCULA PORRA <br/>");
-        }
-        if (!lowerCaseFlag) {
-            out.println("SEM MINUSCULA PORRA <br/>");
-        }
-        if (!specialFlag) {
-            out.println("SEM CARACTER PORRA <br/>");
-        }
-        out.println("</body></html>");
+        request.setAttribute("flags", flags);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
 }
