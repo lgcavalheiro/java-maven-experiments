@@ -1,0 +1,32 @@
+body {
+    background-color: darkgray;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+#low {
+    color: darkred;
+}
+
+#medium {
+    color: darkorange;
+}
+
+#high {
+    color: green;
+}
+
+input[type=submit] {
+    background-color: lightcyan;
+    border: 1px solid black;
+    color: darkblue;
+    border-radius: 4px 4px;
+}
+
+input[type=text] {
+    background-color: lightgray;
+    border: 1px solid black;
+    color: darkblue;
+    border-radius: 4px 4px;
+}
