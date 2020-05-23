@@ -16,23 +16,24 @@
     <%!
         public String processPassword(HashMap<String, Boolean> flags) {
             int failureCounter = 0;
-            String output = "";
+            String output = "<ul>";
             if(flags != null && flags.get("number") == false) {
                 failureCounter++;
-                output += "<p>No number detected.</p>";
+                output += "<li>No number detected.</li>";
             }
             if(flags != null && flags.get("upper") == false) {
                 failureCounter++;
-                output += "<p>No upper case letter detected.</p>";
+                output += "<li>No upper case letter detected.</li>";
             }
             if(flags != null && flags.get("lower") == false) {
                 failureCounter++;
-                output += "<p>No lower case letter detected.</p>";
+                output += "<li>No lower case letter detected.</li>";
             }
             if(flags != null && flags.get("special") == false) {
                 failureCounter++;
-                output += "<p>No special character detected.</p>";
+                output += "<li>No special character detected.</li>";
             }
+            output+= "</ul>";
 
             switch(failureCounter) {
                 case 0:
@@ -59,8 +60,10 @@
     %>
     <% 
         if(flags != null){
-            out.println("<h3>Password verified, it's security level is:</h3>");
+            out.println("<div class=\"form-display\">");
+            out.println("<h3>Password verified, it's security report is:</h3>");
             out.println(processPassword(flags));
+            out.println("</div>");
         }
     %>
     

@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-	<h1>Define password to be verified:</h1>
-	<form action="hello" method="post">
-        <input type="text" name="senha" id="senha">
-        <label for="senha"></label>
-        <input type="submit" value="Verify">
-    </form>
+    <div class="form-display">
+        <h1>Define password to be verified:</h1>
+        <form action="verify" method="post">
+            <input type="text" name="senha" id="senha" placeholder="Type your password">
+            <input class="button" type="submit" value="Verify">
+        </form>
+    </div>
     <jsp:include page="result.jsp"></jsp:include>
 </body>
 </html>
