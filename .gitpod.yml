@@ -1,7 +1,7 @@
 tasks:
-  - init: echo "Replace me with a build script for the project."
-    command: echo "Replace me with something that should run on every start, or just
-      remove me entirely."
+  - init: echo "Locate TOMCAT SERVERS, press the + sign and navigate to /tmp, select tomcat 9 folder."
+    command: echo "Then, run cd ./aps-webdev && mvn package, then go to target folder, right-click aps-webdev.war and select run with tomcat server.
+      Then click "make public" and then "open browser" when prompted."
 image:
   file: .gitpod.Dockerfile
 
